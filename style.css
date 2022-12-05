@@ -1,4 +1,5 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 
 html {
   box-sizing: border-box;
@@ -10,7 +11,8 @@ body {
   overflow-y: hidden;
   display: flex;
   align-items: center;
-
+  background: black;
+  font-family: Raleway, sans-serif;
 }
 
 /* Video Background */
@@ -51,6 +53,7 @@ video {
   z-index: 2;
   display: flex;
   justify-content: center;
+  background: rgba(255, 255, 255, 0.7);
 
 }
 
@@ -84,7 +87,7 @@ input {
   border-radius: 20px;
   background: #fff;
   outline: none;
-
+  font-family: Raleway, sans-serif;
 }
 
 /* Button */
@@ -95,12 +98,15 @@ button {
   margin-top: 15px;
   border: none;
   text-transform: uppercase;
-  background: #006959;
+  background: #101615;
   color: white;
   cursor: pointer;
   outline: none;
 }
 
+button:hover {
+  filter: brightness(180%);
+}
 
 
 /* Countdown */
@@ -109,7 +115,7 @@ ul {
 }
 
 li {
-
+  display: inline-block;
   font-size: 30px;
   list-style-type: none;
   padding: 10px;
@@ -118,6 +124,7 @@ li {
 
 li span {
   display: block;
+  color: rgb(0, 0, 0);
   font-size: 80px;
   text-align: center;
 }
@@ -128,6 +135,30 @@ li span {
   top: 60px;
 }
 
+#complete-title
+{
+  margin-bottom: 40px;
+  animation: complete 4s infinite ;
+}
+
+@keyframes complete {
+  0%{
+    color: rgb(132, 5, 5);
+  }
+  25%{
+    color: rgb(2, 7, 68);
+  }
+  50%{
+    color: rgb(58, 2, 43);
+    transform: scale(1.5);
+  }
+  75%{
+    color: rgb(6, 124, 31);
+  }
+  100%{
+    color: rgb(87, 1, 113);
+  }
+}
 
 /* Media Query: Large Smartphone (Vertical) */
 @media screen and (max-width: 600px) {
@@ -138,11 +169,13 @@ li span {
   
   video {
     object-fit: cover;
+    object-position: 70%;
     margin-top: -1px;
   }
 
   .container {
-
+    min-width: unset;
+    width: 95vw;
     min-height: 245px;
     padding: 20px;
     margin: 10px;
